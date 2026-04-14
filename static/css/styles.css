@@ -177,26 +177,26 @@ footer {
 
 /* 3. The Individual Posters */
 .poster-item {
-    background-color: #fff;
-    padding: 10px;
-    /* We use a specific aspect ratio so tall posters don't look weird next to wide ones */
-    aspect-ratio: 2 / 3; 
-    position: relative; /* Crucial for the pushpin step below */
+    
+    position: relative; 
     box-shadow: 3px 4px 10px rgba(0,0,0,0.3);
     cursor: pointer;
     transition: transform 0.2s ease;
-    
-    /* Centers the placeholder text */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: block; 
     text-align: center;
-    font-weight: bold;
     font-size: 0.8rem;
     text-decoration: none;
     color: var(--text);
+    /* We keep overflow hidden so nothing spills out */
+    overflow: hidden; 
+    border-radius: 4px;
 }
 
+.poster-img {
+    width: 100%;
+    height: auto; 
+    display: block; /* Removes weird spacing underneath images */
+}
 /* Make them pop out when hovered over */
 .poster-item:hover {
     transform: scale(1.05) translateY(-5px);
@@ -216,7 +216,7 @@ footer {
 .poster-item::before {
     content: '';
     position: absolute;
-    top: 5px;
+    top: 10px;
     left: 50%;
     transform: translateX(-50%); /* Perfectly centers it horizontally */
     width: 12px;
