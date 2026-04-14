@@ -173,25 +173,22 @@ footer {
        This makes the board perfectly responsive on mobile phones automatically! */
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 20px;
+    align-items: start;
 }
 
 /* 3. The Individual Posters */
 .poster-item {
-    
     position: relative; 
     box-shadow: 3px 4px 10px rgba(0,0,0,0.3);
     cursor: pointer;
     transition: transform 0.2s ease;
+    
     display: block; 
     text-align: center;
-    font-size: 0.8rem;
     text-decoration: none;
     color: var(--text);
-    /* We keep overflow hidden so nothing spills out */
-    overflow: hidden; 
-    border-radius: 4px;
+    border-radius: 4px; /* Tiny rounded corners */
 }
-
 .poster-img {
     width: 100%;
     height: auto; 
