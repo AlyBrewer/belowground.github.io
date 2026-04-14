@@ -14,11 +14,29 @@
                 <h1>BELOWGROUND</h1>
                 <small>Resource Hub</small>
             </div>
-            <nav class="nav-tabs">
-                <a href="{{ url_for('index') }}">Home</a>
-                <a href="{{ url_for('upload') }}">Upload</a>
-                <a href="{{ url_for('archive') }}">Archive</a>
-            </nav>
+            <div class="nav-tabs">
+                <a href="{{ url_for('index') }}">HOME</a>
+                <a href="{{ url_for('upload') }}">UPLOAD</a>
+                <a href="{{ url_for('archive') }}">ARCHIVE</a>
+                
+                <div class="dropdown">
+                    <a style="cursor: pointer;">DIRECTORY ▼</a>
+                    <div class="dropdown-content">
+                        <a href="{{ url_for('bands') }}">Bands & Artists</a>
+                        <a href="{{ url_for('venues') }}">Venues</a>
+                        <a href="{{ url_for('crew') }}">Crew & Sound</a>
+                    </div>
+                </div>
+            
+                <div class="dropdown">
+                    <a style="cursor: pointer;">RESOURCES ▼</a>
+                    <div class="dropdown-content">
+                        <a href="{{ url_for('marketing') }}">Marketing Methods</a>
+                        <a href="{{ url_for('zines') }}">Zine Library</a>
+                        <a href="{{ url_for('venue_guide') }}">Start a Venue</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 

@@ -72,6 +72,45 @@ header h1 a {
     background-color: var(--accent);
 }
 
+/* Nav Dropdown Styling */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--bg);
+    border: 2px solid var(--border, #000);
+    min-width: 160px;
+    z-index: 1;
+    top: 100%;
+    left: 0;
+}
+
+.dropdown-content a {
+    color: inherit;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid var(--border, #000);
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--accent, #eee); /* Use your accent color */
+    color: #000;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
 main {
     min-height: 50vh;
 }
@@ -100,4 +139,11 @@ footer {
     background: var(--accent);
     color: var(--text);
     outline: 2px solid var(--text);
+}
+
+.construction-box {
+    border: 2px dashed var(--border, #000);
+    padding: 2rem;
+    text-align: center;
+    margin-top: 2rem;
 }
