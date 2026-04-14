@@ -1,6 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
     <h2>[ UPLOAD ]</h2>
-    <p>We will update this later.</p>
+    <p>Select a file to contribute to the drive.</p>
     
+    <div style="background: var(--accent); padding: 2rem; border: 2px dashed var(--border); margin-bottom: 2rem;">
+        <input type="file" id="fileInput" style="margin-bottom: 1rem; display: block; font-family: inherit; font-size: 1rem;">
+        <button onclick="handleUpload()" class="btn">Push to Drive</button>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/upload.js') }}"></script>
 {% endblock %}
