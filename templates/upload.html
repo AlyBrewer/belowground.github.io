@@ -1,12 +1,39 @@
 {% extends 'base.html' %}
 {% block content %}
     <h2>[ UPLOAD ]</h2>
-    <p>Select a file to contribute to the drive.</p>
+    <p>Help keep the board updated. Please provide the show details.</p>
     
-    <div style="background: var(--accent); padding: 2rem; border: 2px dashed var(--border); margin-bottom: 2rem;">
-        <input type="file" id="fileInput" style="margin-bottom: 1rem; display: block; font-family: inherit; font-size: 1rem;">
-        <button onclick="handleUpload()" class="btn">Push to Drive</button>
+    <div style="background: var(--accent); padding: 2rem; border: 2px dashed var(--border); margin-bottom: 2rem; max-width: 500px;">
+        <label style="display:block; margin-bottom: 0.5rem; font-weight:bold;">SHOW DATE:</label>
+        <input type="date" id="showDate" style="width:100%; padding:10px; margin-bottom:1.5rem; font-family:inherit;">
+
+        <label style="display:block; margin-bottom: 0.5rem; font-weight:bold;">VENUE:</label>
+        <select id="venueSelect" style="width:100%; padding:10px; margin-bottom:1rem; font-family:inherit;">
+            <option value="">-- Select a Venue --</option>
+            <option value="Casket">Casket</option>
+            <option value="Dungeon">Dungeon</option>
+            <option value="Nest">Nest</option>
+            <option value="Sun House">Sun House</option>
+            <option value="Milky Way Lounge">Milky Way Lounge</option>
+            <option value="Hill Club">Hill Club</option>
+            <option value="Vibe">Vibe</option>
+            <option value="OTHER">Other / New Venue</option>
+        </select>
+        
+        <input type="text" id="customVenue" placeholder="Type Venue Name..." style="display:none; width:100%; padding:10px; margin-bottom:1.5rem; font-family:inherit;">
+
+        <label style="display:block; margin-bottom: 0.5rem; font-weight:bold;">FLYER PHOTO:</label>
+        <input type="file" id="fileInput" accept="image/*" style="margin-bottom:1.5rem; display: block; font-family: inherit;">
+        
+        <button onclick="handleUpload()" class="btn" style="width:100%;">Push to Drive</button>
     </div>
 
+    <script>
+        // Show/Hide custom venue box
+        document.getElementById('venueSelect').addEventListener('change', function() {
+            const customInput = document.getElementById('customVenue');
+            customInput.style.display = (this.value === 'OTHER') ? 'block' : 'none';
+        });
+    </script>
     <script src="{{ url_for('static', filename='js/upload.js') }}"></script>
 {% endblock %}
