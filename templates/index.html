@@ -1,5 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h2>[ HOME ]</h2>
-    <p>This is the index page.</p>
+    
+    <div style="margin-bottom: 2rem;">
+        <h2>[ THE BOARD ]</h2>
+        <p>Click a flyer to view the photo archive from that show.</p>
+    </div>
+
+    <div class="corkboard">
+        
+        <div class="poster-grid" id="poster-grid">
+            </div>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='js/corkboard.js') }}"></script>
+
 {% endblock %}
