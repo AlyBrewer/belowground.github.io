@@ -17,6 +17,7 @@ def archive():
 @app.route('/directory/')
 def directory():
     return render_template('directory.html')
+
 # --- DIRECTORY ROUTES ---
 @app.route('/directory/bands')
 def bands():
